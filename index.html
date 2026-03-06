@@ -1,143 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARCHIVE STORE</title>
+  <title>Le désir d’être</title>
 
   <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="header">
-
-  <div class="menu">
-    ☰
+<aside class="side-menu" id="sideMenu" aria-hidden="true">
+  <div class="side-menu__header">
+    <h2>Навигация</h2>
+    <button class="side-menu__close" id="closeMenu" aria-label="Закрыть меню">×</button>
   </div>
+
+  <nav class="side-menu__nav">
+    <a href="#">Одежда</a>
+    <a href="#">Аксессуары</a>
+    <a href="#">Сертификаты</a>
+
+    <details>
+      <summary>Покупателям</summary>
+      <a href="#">Публичная оферта</a>
+      <a href="#">Информация о доставке и возврате</a>
+      <a href="#">Политика конфиденциальности</a>
+    </details>
+  </nav>
+</aside>
+
+<div class="overlay" id="overlay" aria-hidden="true"></div>
+
+<header class="header">
+  <button class="menu" id="openMenu" aria-label="Открыть меню">
+    ☰
+  </button>
 
   <div class="logo">
-    ARCHIVE
+    Le désir d’être
   </div>
 
-  <div class="cart">
-    👜
-  </div>
-
+  <button class="cart" aria-label="Корзина">
+    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <path d="M6 7h15l-1.5 8.5a2 2 0 0 1-2 1.5H10a2 2 0 0 1-2-1.5L6 4H3" />
+      <circle cx="10" cy="20" r="1.5" />
+      <circle cx="18" cy="20" r="1.5" />
+    </svg>
+  </button>
 </header>
 
-
 <section class="hero">
-
-  <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf" alt="">
+  <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf" alt="Новая коллекция одежды">
 
   <div class="hero-text">
     <h1>NEW COLLECTION</h1>
     <button>SHOP NOW</button>
   </div>
-
 </section>
-
 
 <section class="products">
-
   <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614">
-
+    <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614" alt="Black wool jacket">
     <h3>BLACK WOOL JACKET</h3>
-
     <p>12 900 ₽</p>
-
   </div>
 
-
   <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1520975928316-54a1a76c2c16">
-
+    <img src="https://images.unsplash.com/photo-1520975928316-54a1a76c2c16" alt="Longsleeve frost">
     <h3>LONGSLEEVE FROST</h3>
-
     <p>3 500 ₽</p>
-
   </div>
 
-
   <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
-
+    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" alt="Archive tee">
     <h3>ARCHIVE TEE</h3>
-
     <p>2 900 ₽</p>
-
   </div>
-
 
   <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f">
-
+    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f" alt="Utility gloves">
     <h3>UTILITY GLOVES</h3>
-
     <p>4 000 ₽</p>
-
   </div>
-
 </section>
-
 
 <section class="collection">
-
   <h2>NEW COLLECTION ONLINE</h2>
-
   <a href="#">VIEW ALL</a>
-
 </section>
-
 
 <section class="products">
-
   <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d">
-
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d" alt="Archive hoodie">
     <h3>ARCHIVE HOODIE</h3>
-
     <p>8 900 ₽</p>
-
   </div>
 
   <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1520975928316-54a1a76c2c16">
-
+    <img src="https://images.unsplash.com/photo-1520975928316-54a1a76c2c16" alt="Black pants">
     <h3>BLACK PANTS</h3>
-
     <p>6 500 ₽</p>
-
   </div>
 
   <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Minimal coat">
     <h3>MINIMAL COAT</h3>
-
     <p>17 500 ₽</p>
-
   </div>
-
 </section>
 
-
 <footer class="footer">
-
-  <p>© ARCHIVE STORE 2026</p>
-
+  <p>© Le désir d’être 2026</p>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
