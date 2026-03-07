@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль — Le désir d’être</title>
+    <title>Le désir d’être</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/store.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
@@ -11,18 +11,16 @@
 <body class="store-page">
 <aside class="side-menu" id="sideMenu" aria-hidden="true">
     <div class="side-menu__header"><h2>Навигация</h2><button class="side-menu__close" id="closeMenu">×</button></div>
-    <nav class="side-menu__nav"><a href="../catalog/index.html">Каталог</a><a href="../cart/index.html">Корзина</a><a href="../checkout/index.html">Оформление</a></nav>
+    <nav class="side-menu__nav"><a href="women/index.html">Женщинам</a><a href="men/index.html">Мужчинам</a><a href="../cart/index.html">Корзина</a></nav>
 </aside>
 <div class="overlay" id="overlay" aria-hidden="true"></div>
 <header class="header"><button class="menu" id="openMenu">☰</button></header>
-
 <main class="store-main">
-    <div class="page-headline"><h1>Профиль</h1><p>Данные пользователя и история заказов</p></div>
-    <div id="profileRoot"></div>
+    <div class="page-headline"><h1>Женская одежда</h1><p>Новая романтическая коллекция</p></div>
+    <section class="catalog-layout"><div id="filtersRoot"></div><div><p class="catalog-summary" id="catalogSummary"></p><div id="gridRoot"></div></div></section>
 </main>
-
 <footer class="footer"></footer>
 <script src="../js/main.js"></script>
-<script type="module" src="../js/profile-page.js"></script>
+<script type="module" src="../js/catalog-page.js"></script>
 </body>
 </html>
