@@ -97,13 +97,13 @@ body {
 }
 
 .product h3 {
-    font-size: 14px;
+    font-size: 22px;
     font-weight: 500;
     margin-bottom: 5px;
 }
 
 .product p {
-    font-size: 13px;
+    font-size: 19px;
     color: #444;
 }
 
@@ -139,8 +139,8 @@ body {
     position: fixed;
 
     top: 0;
-    left: -320px;
-    width: 320px;
+    left: -380px;
+    width: 380px;
     height: 100vh;
     background: #0b0b0b;
     color: #f4f4f4;
@@ -161,9 +161,9 @@ body {
 }
 
 .side-menu__header h2 {
-    font-family: 'Cinzel', serif;
+    font-family: '../assets/fonts/Montserrat/Montserrat-ThinItalic', serif;
     letter-spacing: 1px;
-    font-size: 26px;
+    font-size: 48px;
     font-weight: 400;
 }
 
@@ -185,7 +185,7 @@ body {
 .side-menu__nav summary {
     color: #f4f4f4;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 36px;
     font-weight: 400;
     cursor: pointer;
     list-style: none;
@@ -201,7 +201,7 @@ body {
 .side-menu__nav details a {
     display: block;
     width: 100%;
-    font-size: 15px;
+    font-size: 28px;
     opacity: 0.9;
     margin-left: 14px;
 }
