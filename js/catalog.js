@@ -43,7 +43,8 @@
     }
     const card = e.target.closest('.product-card');
     if (!card) return;
-    location.href = `product.html?id=${card.dataset.id}`;
+    if (typeof goToRoute === 'function') goToRoute('product', { id: card.dataset.id });
+    else location.href = `product.html?id=${card.dataset.id}`;
   });
 
   render();

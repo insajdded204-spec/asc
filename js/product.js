@@ -2,6 +2,9 @@
 (function () {
   renderHeader();
   const params = new URLSearchParams(location.search);
+  const backLink = document.getElementById('back-to-catalog');
+  if (backLink && typeof routePath === 'function') backLink.href = routePath('catalog');
+
   const id = Number(params.get('id'));
   const product = products.find((p) => p.id === id);
 

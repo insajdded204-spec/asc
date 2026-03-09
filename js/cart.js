@@ -58,10 +58,10 @@ function renderHeader() {
   slot.innerHTML = `
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="brand" href="index.html">FastAPI Shop</a>
+        <a class="brand" href="${typeof routePath === 'function' ? routePath('home') : 'index.html'}">FastAPI Shop</a>
         <nav class="header-nav">
-          <a class="nav-link" href="catalog.html">Catalog</a>
-          <a class="cart-link" href="cart.html" aria-label="Cart">
+          <a class="nav-link" href="${typeof routePath === 'function' ? routePath('catalog') : 'catalog.html'}">Catalog</a>
+          <a class="cart-link" href="${typeof routePath === 'function' ? routePath('cart') : 'cart.html'}" aria-label="Cart">
             🛒 <span class="cart-count" data-cart-count>0</span>
           </a>
         </nav>

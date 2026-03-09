@@ -14,7 +14,8 @@
   document.getElementById('checkout-form').addEventListener('submit', (e) => {
     e.preventDefault();
     localStorage.removeItem(CART_KEY);
-    location.href = 'order-success.html';
+    if (typeof goToRoute === 'function') goToRoute('success');
+    else location.href = 'order-success.html';
   });
 
   renderSummary();
