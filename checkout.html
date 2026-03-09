@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - FastAPI Shop</title>
+  <link rel="stylesheet" href="css/shop.css" />
+</head>
+<body class="shop-body">
+  <div id="header-slot"></div>
+
+  <main class="page-section container">
+    <!-- Раздел оформления заказа -->
+    <h1 class="page-title">Checkout</h1>
+
+    <section class="checkout-grid">
+      <!-- Форма данных покупателя -->
+      <form class="card form-card" id="checkout-form">
+        <div class="form-grid">
+          <input class="input" required placeholder="Full Name" />
+          <input class="input" required type="email" placeholder="Email" />
+          <input class="input" required placeholder="Address" />
+          <input class="input" required placeholder="City" />
+          <input class="input" required placeholder="Postal Code" />
+          <button class="btn btn-primary" type="submit">Place Order</button>
+        </div>
+      </form>
+
+      <!-- Сводка товаров и суммы заказа -->
+      <aside class="card summary-card">
+        <h2>Order Summary</h2>
+        <ul class="summary-list" id="checkout-list"></ul>
+        <p class="total-line">Total: <span id="checkout-total">$0.00</span></p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="js/router.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
