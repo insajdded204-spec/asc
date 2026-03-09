@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalog - FastAPI Shop</title>
+  <link rel="stylesheet" href="css/shop.css" />
+</head>
+<body class="shop-body">
+  <!-- Переиспользуемая шапка сайта, вставляется через JS -->
+  <div id="header-slot"></div>
+
+  <main class="page-section container">
+    <!-- Основной заголовок страницы каталога -->
+    <h1 class="page-title">Product Catalog</h1>
+    <p class="page-subtitle">Discover our amazing products</p>
+
+    <div class="catalog-layout">
+      <!-- Левая колонка: фильтр по категориям -->
+      <aside class="card sidebar">
+        <h2>Categories</h2>
+        <ul class="category-list">
+          <li><button class="category-btn active" data-category="All Categories">All Categories</button></li>
+          <li><button class="category-btn" data-category="Electronics">Electronics</button></li>
+          <li><button class="category-btn" data-category="Clothing">Clothing</button></li>
+          <li><button class="category-btn" data-category="Books">Books</button></li>
+          <li><button class="category-btn" data-category="Home & Garden">Home & Garden</button></li>
+        </ul>
+      </aside>
+
+      <!-- Правая колонка: количество и сетка карточек -->
+      <section>
+        <p class="products-meta" id="products-count">13 products found</p>
+        <div class="products-grid" id="products-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>
