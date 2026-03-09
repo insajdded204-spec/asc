@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Success - FastAPI Shop</title>
+  <link rel="stylesheet" href="css/shop.css" />
+</head>
+<body class="shop-body">
+  <div id="header-slot"></div>
+
+  <main class="container success-center">
+    <!-- Экран успешного заказа -->
+    <section>
+      <h1 class="page-title">✓ Order successfully placed</h1>
+      <p class="page-subtitle">Thank you for your purchase.</p>
+      <p><a class="btn btn-primary" href="catalog.html">Back to catalog</a></p>
+    </section>
+  </main>
+
+  <script src="js/cart.js"></script>
+  <script>
+    // На странице успеха очищаем корзину и обновляем счётчик
+    localStorage.removeItem('fastapi-shop-cart');
+    renderHeader();
+  </script>
+</body>
+</html>

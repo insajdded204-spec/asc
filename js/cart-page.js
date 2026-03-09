@@ -1,128 +1,46 @@
-// Импорт списка товаров из файла с данными магазина
-import { products } from './store-data.js';
+// Логика страницы корзины: список товаров, изменение количества, итоговая сумма
+(function () {
+  renderHeader();
 
-// Импорт функций для работы с корзиной
-import { getCart, updateQuantity, removeFromCart } from './cart-store.js';
+  const list = document.getElementById('cart-list');
+  const total = document.getElementById('cart-total');
 
-// Импорт компонентов интерфейса
-import { mountNavbar, mountFooter, setupCartBadgeSync, cartItemTemplate, formatPrice } from './components.js';
-
-
-// Основная функция инициализации страницы корзины
-function initCartPage() {
-
-  // Добавляем навигацию
-  mountNavbar('/cart');
-
-  // Добавляем футер
-  mountFooter();
-
-  // Обновляем счетчик товаров в иконке корзины
-  setupCartBadgeSync();
-
-  // Получаем элементы страницы
-  const listRoot = document.getElementById('cartList'); // список товаров
-  const summaryRoot = document.getElementById('cartSummary'); // блок с итоговой суммой
-
-
-  // Функция рендера (перерисовки) корзины
-  function render() {
-
-    // Получаем текущую корзину
+  function renderCart() {
     const cart = getCart();
-
-    // Если корзина пустая
     if (!cart.length) {
-
-      // Показываем сообщение
-      listRoot.innerHTML = '<div class="empty-state">Корзина пуста. Добавьте товары из каталога.</div>';
-
-      // Показываем итог и кнопку перехода в каталог
-      summaryRoot.innerHTML = `
-        <p>Итого: 0 ₽</p>
-        <a class="primary-button nav-link" href="/catalog/" 
-           style="display:inline-block;text-align:center;margin-top:10px;">
-           Перейти в каталог
-        </a>
-      `;
+      list.innerHTML = '<p class="card" style="padding:16px;">Your cart is empty.</p>';
+      total.textContent = '$0.00';
       return;
     }
 
-    // Создаем массив объектов:
-    // item — товар в корзине
-    // product — данные товара из каталога
-    const entries = cart
-        .map((item) => ({
-          item,
-          product: products.find((product) => product.id === item.productId)
-        }))
-        .filter((entry) => entry.product); // убираем товары, которых нет в каталоге
+    list.innerHTML = cart.map((item) => `
+      <article class="card cart-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div>
+          <h3 style="margin:0 0 6px;">${item.name}</h3>
+          <p style="margin:0;color:#5b6474;">$${item.price.toFixed(2)}</p>
+          <div class="qty-controls" style="margin-top:8px;">
+            <button class="qty-btn" data-dec="${item.id}">-</button>
+            <span>${item.quantity}</span>
+            <button class="qty-btn" data-inc="${item.id}">+</button>
+            <button class="btn btn-outline" data-remove="${item.id}" style="margin-left:8px;">Remove</button>
+          </div>
+        </div>
+      </article>
+    `).join('');
 
-
-    // Генерируем HTML для всех товаров корзины
-    listRoot.innerHTML = entries.map(cartItemTemplate).join('');
-
-
-    // Считаем общую стоимость
-    const total = entries.reduce(
-        (sum, entry) => sum + entry.product.price * entry.item.quantity,
-        0
-    );
-
-
-    // Выводим блок итогового заказа
-    summaryRoot.innerHTML = `
-      <h2>Ваш заказ</h2>
-      <p style="font-size:30px;margin:10px 0;">${formatPrice(total)}</p>
-      <a class="primary-button nav-link" href="/checkout/" 
-         style="display:inline-block;text-align:center;">
-         Перейти к оформлению
-      </a>
-    `;
-
-
-    // Добавляем обработчики кнопок для каждого товара
-    listRoot.querySelectorAll('[data-cart-item]').forEach((article) => {
-
-      // Получаем id товара
-      const id = article.dataset.cartItem;
-
-      // Получаем выбранный размер
-      const size = article.dataset.cartSize || null;
-
-      // Элемент количества
-      const quantitySpan = article.querySelector('.qty-control span');
-
-      // Текущее количество
-      const current = Number(quantitySpan.textContent);
-
-
-      // Кнопка увеличения количества
-      article.querySelector('[data-qty-action="increase"]').addEventListener('click', () => {
-        updateQuantity(id, size, current + 1);
-        render(); // перерисовываем корзину
-      });
-
-
-      // Кнопка уменьшения количества
-      article.querySelector('[data-qty-action="decrease"]').addEventListener('click', () => {
-        updateQuantity(id, size, Math.max(1, current - 1));
-        render();
-      });
-
-
-      // Кнопка удаления товара
-      article.querySelector('[data-remove-item]').addEventListener('click', () => {
-        removeFromCart(id, size);
-        render();
-      });
-    });
+    total.textContent = `$${getCartTotal().toFixed(2)}`;
   }
 
-  // Первый запуск рендера
-  render();
-}
+  list.addEventListener('click', (e) => {
+    const inc = e.target.closest('[data-inc]');
+    const dec = e.target.closest('[data-dec]');
+    const remove = e.target.closest('[data-remove]');
+    if (inc) increaseQuantity(Number(inc.dataset.inc));
+    if (dec) decreaseQuantity(Number(dec.dataset.dec));
+    if (remove) removeFromCart(Number(remove.dataset.remove));
+    renderCart();
+  });
 
-
-// Запуск страницы корзины
-initCartPage();
+  renderCart();
+})();
