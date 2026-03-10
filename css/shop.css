@@ -27,7 +27,7 @@ body.shop-body {
 }
 
 .container {
-  width: min(1200px, calc(100% - 40px));
+  width: min(1750px, calc(100% - 40px));
   margin: 0 auto;
 }
 
@@ -142,7 +142,7 @@ body.shop-body {
 .products-meta { margin-bottom: 12px; color: var(--muted); }
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 

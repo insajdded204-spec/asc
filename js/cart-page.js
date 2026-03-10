@@ -18,7 +18,7 @@
         <img src="${item.image}" alt="${item.name}">
         <div>
           <h3 style="margin:0 0 6px;">${item.name}</h3>
-          <p style="margin:0;color:#5b6474;">$${item.price.toFixed(2)}</p>
+          <p style="margin:0;color:#5b6474;">${item.price}₽</p>
           <div class="qty-controls" style="margin-top:8px;">
             <button class="qty-btn" data-dec="${item.id}">-</button>
             <span>${item.quantity}</span>
@@ -29,7 +29,7 @@
       </article>
     `).join('');
 
-    total.textContent = `$${getCartTotal().toFixed(2)}`;
+    total.textContent = `${getCartTotal()}₽`;
   }
 
   list.addEventListener('click', (e) => {

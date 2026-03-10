@@ -16,7 +16,7 @@
         <div class="product-card__body">
           <span class="badge">${p.category}</span>
           <h3 class="product-name">${p.name}</h3>
-          <p class="product-price">$${p.price.toFixed(2)}</p>
+          <p class="product-price">${p.price}₽</p>
           <button class="btn btn-primary" data-add="${p.id}">Add to Cart</button>
         </div>
       </article>

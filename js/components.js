@@ -35,10 +35,7 @@ export function mountNavbar(activePath = '') {
       <a class="nav-link ${activePath.startsWith('/catalog') ? 'is-active' : ''}" href="/catalog/">
         Каталог
       </a>
-
-      <!-- Профиль -->
-      <a class="nav-link" href="/profile/">Профиль</a>
-
+      
       <!-- Корзина -->
       <a class="nav-link cart-link" href="/cart/" aria-label="Корзина">
 

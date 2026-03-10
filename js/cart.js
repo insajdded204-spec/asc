@@ -58,7 +58,7 @@ function renderHeader() {
   slot.innerHTML = `
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="brand" href="index.html">FastAPI Shop</a>
+        <a class="brand" href="index.html">Le désir d’être</a>
         <nav class="header-nav">
           <a class="nav-link" href="catalog.html">Catalog</a>
           <a class="cart-link" href="cart.html" aria-label="Cart">
