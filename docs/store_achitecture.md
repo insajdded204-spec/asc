@@ -64,11 +64,8 @@
 │   ├── product-page.js
 │   ├── cart-page.js
 │   ├── checkout-page.js
-│   └── profile-page.js
-├── catalog/
+│   ├── catalog/
 │   ├── index.html
-│   ├── men/index.html
-│   └── women/index.html
 ├── product/
 │   └── [id]/index.html
 ├── cart/index.html
